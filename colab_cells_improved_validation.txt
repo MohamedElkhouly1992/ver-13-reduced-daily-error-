@@ -1,0 +1,23 @@
+# Cell 1 - install
+!pip install -q streamlit pandas numpy matplotlib scikit-learn openpyxl xlsxwriter
+
+# Cell 2 - upload bundle files and validation data
+from google.colab import files
+uploaded = files.upload()
+
+# Cell 3 - run batch validation
+!python run_validation_pipeline.py --input example_designbuilder_daily_with_errors.csv --output improved_validation_outputs
+
+# Cell 4 - inspect outputs
+import pandas as pd
+
+display(pd.read_csv('improved_validation_outputs/validation_metrics_original_vs_corrected.csv'))
+display(pd.read_csv('improved_validation_outputs/monthly_error_original.csv').head())
+display(pd.read_csv('improved_validation_outputs/monthly_error_corrected.csv').head())
+
+# Cell 5 - download outputs
+from google.colab import files
+files.download('improved_validation_outputs/validation_metrics_original_vs_corrected.csv')
+files.download('improved_validation_outputs/monthly_error_original.csv')
+files.download('improved_validation_outputs/monthly_error_corrected.csv')
+files.download('improved_validation_outputs/daily_original_and_corrected.csv')

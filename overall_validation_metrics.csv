@@ -1,0 +1,13 @@
+Metric,Value
+records,1825
+date_start,2020-01-01
+date_end,2024-12-31
+designbuilder_total_MWh,8091.617112921001
+model_total_MWh,8196.826869325001
+aggregate_pct_error,1.3002315227693784
+daily_MAPE_pct,37.10438454295327
+daily_RMSE_kWh,2084.689915882403
+daily_CVRMSE_pct,47.01852600526688
+daily_NMBE_pct,1.3002315227693737
+monthly_MAPE_pct,32.52473175936803
+monthly_max_abs_pct_error,78.86824183970501
